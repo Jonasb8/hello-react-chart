@@ -39,13 +39,13 @@ kind: Ingress
 metadata:
   annotations:
     # add an annotation indicating the issuer to use.
-    cert-manager.io/cluster-issuer: letsencrypt-staging
+    cert-manager.io/cluster-issuer: letsencrypt
   name: hello-react-ingress
   namespace: hello-react
 spec:
   ingressClassName: nginx
   rules:
-  - host: 123.hello-react.162.19.17.95.nip.io
+  - host: 1234.hello-react.162.19.17.95.nip.io
     http:
       paths:
       - backend:
@@ -57,5 +57,5 @@ spec:
         pathType: Prefix
   tls: # < placing a host in the TLS config will determine what ends up in the cert's subjectAltNames
   - hosts:
-    - 123.hello-react.162.19.17.95.nip.io
+    - 1234.hello-react.162.19.17.95.nip.io
     secretName: myingress-cert
